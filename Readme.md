@@ -1,6 +1,5 @@
-#Heading-Overview Plugin for reveal.js  
-
-##Usage  
+# Heading-Overview Plugin for reveal.js  
+## Usage  
 
 + add class "heading-overview" to headings in top-level slides:
 
@@ -20,6 +19,6 @@ Reveal.initialize({
 })
 ```
   
-###Please enjoy art  
+### Please enjoy art  
 
 &copy; &trade; by Leonhard Gahr
