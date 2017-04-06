@@ -2,7 +2,6 @@
 ## Usage  
 
 + add class "heading-overview" to headings in top-level slides:
-
 ```
 <section>
     <h2 class="heading-overview">Hello There</h2>
