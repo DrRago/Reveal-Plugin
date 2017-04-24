@@ -16,11 +16,9 @@ function init() {
 
     var topicsElement = document.createElement("div");
     topicsElement.className = "topics";
-    topicsElement.setAttribute("style", "text-align: center");
 
     var headElement = document.createElement("div");
     headElement.className = "head";
-    headElement.setAttribute("style", "margin-top: 90vh; margin-bottom: 0; z-index:500;");
 
 
     var textElements = [];
@@ -48,24 +46,11 @@ function init() {
 
     bodyChild.parentNode.insertBefore(topicsElement, bodyChild.nextSibling);
 
-    addStyle();
+    addRevealListener();
 
-    addRevealListener()
-}
-
-function addStyle() {
-    var css = '.topics{z-index:9999;}.head h4{color:gray;display:inline;}.head .active{color:#000;-webkit-transition:color 2s;-moz-transition:color 2s;-ms-transition:color 2s;-o-transition:color 2s;transition:color 2s}.head .inactive{color:gray;-webkit-transition:color 2s;-moz-transition:color 2s;-ms-transition:color 2s;-o-transition:color 2s;transition:color 2s}.hidden{display: none;}',
-        head = document.head || document.getElementsByTagName('head')[0],
-        style = document.createElement('style');
-
-    style.type = 'text/css';
-    if (style.styleSheet) {
-        style.styleSheet.cssText = css;
-    } else {
-        style.appendChild(document.createTextNode(css));
+    if (Reveal.getCurrentSlide().classList.contains("no-heading-overview")) {
+        document.getElementsByClassName("topics")[0].classList.add("hidden");
     }
-
-    head.appendChild(style);
 }
 
 function appendClass(element, newClass) {
@@ -84,6 +69,11 @@ function addRevealListener() {
     var recentElement;
 
     Reveal.addEventListener('slidechanged', function () {
+        if (Reveal.getCurrentSlide().classList.contains("no-heading-overview")) {
+            document.getElementsByClassName("topics")[0].classList.add("hidden")
+        } else {
+            document.getElementsByClassName("topics")[0].classList.remove("hidden")
+        }
         if (indices.indexOf(Reveal.getIndices().h) !== -1) {
             if (recentElement) {
                 recentElement.classList.remove("active");
