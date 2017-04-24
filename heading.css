@@ -1,11 +1,12 @@
 .topics {
     position: fixed;
-    margin-top: 90vh !important;
+    margin-top: 93vh !important;
     left: 50%;
     transform: translate(-50%, 0);
     text-align: center;
     z-index: 9999;
     width: 100%;
+    transition: visibility 0s, opacity 1ms linear;
 }
 .head h4 {
     color: gray;
@@ -27,10 +28,11 @@
     -o-transition: color 2s;
     transition: color 2s
 }
-.hidden {
-    display: none;
+
+.topics {
+    font-size: 30px !important;
 }
 
-.smaller{
-    ;
+table tr td:first-child {
+    white-space: nowrap;
 }
