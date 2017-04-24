@@ -49,7 +49,7 @@ function init() {
     addRevealListener();
 
     if (Reveal.getCurrentSlide().classList.contains("no-heading-overview")) {
-        document.getElementsByClassName("topics")[0].classList.add("hidden");
+        document.getElementsByClassName("topics")[0].style.opacity = 0;
     }
 }
 
@@ -70,9 +70,9 @@ function addRevealListener() {
 
     Reveal.addEventListener('slidechanged', function () {
         if (Reveal.getCurrentSlide().classList.contains("no-heading-overview")) {
-            document.getElementsByClassName("topics")[0].classList.add("hidden")
+            document.getElementsByClassName("topics")[0].style.opacity = 0
         } else {
-            document.getElementsByClassName("topics")[0].classList.remove("hidden")
+            document.getElementsByClassName("topics")[0].style.opacity = 1
         }
         if (indices.indexOf(Reveal.getIndices().h) !== -1) {
             if (recentElement) {
@@ -94,9 +94,9 @@ function addRevealListener() {
     });
 
     Reveal.addEventListener('overviewshown', function () {
-        document.getElementsByClassName("topics")[0].className = "topics hidden"
+        document.getElementsByClassName("topics")[0].style.opacity = 0
     });
     Reveal.addEventListener('overviewhidden', function () {
-        document.getElementsByClassName("topics")[0].className = "topics"
+        document.getElementsByClassName("topics")[0].style.opacity = 1
     });
 }
