@@ -28,6 +28,8 @@ Reveal.initialize({
 </section>
 ```
 
++ __don't forget to add the example stylesheet or create a custom one__
+
 ## Class Names
 + ``.topics``: complete container
 + ``.topics .head``: container with the topics
