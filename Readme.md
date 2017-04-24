@@ -18,7 +18,7 @@ Reveal.initialize({
 })
 ```
 
-+ add class "no-heading-overview" to slides to add class 'hidden' to the heading-overview
++ add class "no-heading-overview" to slides hide the heading-overview
 ```
 <section class="no-heading-overview">
     <h2 class="heading-overview">Hello There</h2>
@@ -35,7 +35,6 @@ Reveal.initialize({
 + ``.topics .head``: container with the topics
 + ``.topics .head .active``: active topic
 + ``.topics .head .inactive``: inactive topic
-+ ``.hidden``: set to ``.topics`` if the overview should be hidden
 + Headings have no specific class, they are ``.topics .head h4``
   
 ### Please enjoy art  
