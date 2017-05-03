@@ -6,7 +6,7 @@
     text-align: center;
     z-index: 9999;
     width: 100%;
-    transition: visibility 0s, opacity 1ms linear;
+    transition: visibility 0s, opacity .5s linear;
 }
 .head h4 {
     color: gray;
@@ -31,8 +31,4 @@
 
 .topics {
     font-size: 30px !important;
-}
-
-table tr td:first-child {
-    white-space: nowrap;
 }
