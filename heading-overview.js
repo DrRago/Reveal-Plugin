@@ -1,9 +1,19 @@
 /**
  * Created by Leonhard Gahr on 04.04.2017.
  */
-init();
+init(parseInt("0x" + gup("sep", document.querySelector('script[src^="plugin/heading-overview.js"]').getAttribute("src"))));
 
-function init() {
+function gup( name, url ) {
+    if (!url) url = location.href;
+    name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+    var regexS = "[\\?&]"+name+"=([^&#]*)";
+    var regex = new RegExp( regexS );
+    var results = regex.exec( url );
+    return results === null ? null : results[1];
+}
+
+function init(sep) {
+    console.log(sep);
     var seperator = " - ";
 
     var headings = document.getElementsByClassName("heading-overview");
@@ -26,7 +36,7 @@ function init() {
     for (var key in headings) {
         if (headings.hasOwnProperty(key) && headings[key].nodeType === 1) {
             var element = document.createElement("h4");
-            element.innerText = headings[key].innerText;
+            element.innerText = headings[key].innerText.replace("\n", " ");
             element.className = headings[key].innerText.replace(" ", "").toLowerCase() + " heading-preview";
 
             var seperatorElement = document.createElement("h4");
